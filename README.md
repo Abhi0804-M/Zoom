@@ -1,13 +1,8 @@
 # Node JS Zoom Clone
 
-Credit to [Web Dev Simplified](https://www.youtube.com/watch?v=DvlyzDZDEq4)
+The Zoom meeting clone project aims to create a web-based video conferencing application that facilitates seamless remote collaboration. With a focus on user authentication, meeting management, and real-time communication using WebRTC technology, the platform allows users to host and join meetings with ease. 
 
-### Want to join the BEST JavaScript Course on the planet and learn how to build the projects like Zoom Clone with JavaScript, NodeJS, and MongoDB?
-
-Check out our `Profit With JavaScript Course`    :point_down: 
-
-[Click Here](https://cleverprogrammer.unstacksite.com/pwj?utm_source=github&utm_medium=repo&utm_content=5-aug-live-zoom-clone-youssef-naz&utm_campaign=live-everyday&utm_term=warm)
-
-Made with :heart: by [Naz](https://www.instagram.com/nazdumanskyy/) & [Youssef](https://www.instagram.com/youcef.dev/)
-
+By incorporating features such as participant invitation, intuitive meeting controls, and secure data transmission through Socket.io integration, the application ensures a user-friendly and secure virtual meeting experience. With a responsive user interface and robust security measures, the Zoom meeting clone project aims to provide a reliable and efficient platform for remote communication and collaboration.
+# AUTHOR
+Made with :heart: by ABHILASH M
 
