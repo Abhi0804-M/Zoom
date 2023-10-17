@@ -14,7 +14,12 @@
 }
 
 .main__videos {
-    flex-direction: column;
+     flex-grow: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
 .main__controls {
