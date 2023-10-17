@@ -132,3 +132,94 @@ const setPlayVideo = () => {
   `
   document.querySelector('.main__video_button').innerHTML = html;
 }
+
+function sendMessageOnClick() {
+  const chatMessageInput = document.getElementById('chat_message');
+  const message = chatMessageInput.value.trim();
+  const messagesList = document.querySelector('.main__chat_window ul');
+
+  if (message !== '') {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<b>User 1</b><br>${message}`;
+      messagesList.appendChild(listItem);
+      chatMessageInput.value = '';
+      scrollToBotto();
+  }
+}
+
+// Event listener for clicking to send message
+document.getElementById('chat_message').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+      sendMessageOnClick();
+  }
+});
+const scrollToBotto = () => {
+  var chatWindow = document.querySelector('.main__chat_window');
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+};
+
+ // Initially, the chat window is open
+
+function toggleChatWindows() {
+  const chatWindow = document.getElementById('chat-window');
+  if (chatWindow.style.display === 'none') {
+      chatWindow.style.display = 'block';
+  } else {
+      chatWindow.style.display = 'none';
+  }
+}
+function leaveMeeting() {
+  if (confirm("Are you sure you want to leave the meeting?")) {
+    window.location.href = "about:blank";
+  }
+}
+let isParticipantListVisible = false;
+
+
+function listParticipants() {
+  // Get the list of participants from the socket connection
+  if (!isParticipantListVisible) {
+    // Get the list of participants from the socket connection
+    const participants = Object.keys(peers).length;
+
+    // Display the number of participants
+    const participantButton = document.getElementById('participants');
+    participantButton.innerHTML = `<i class="fas fa-user-friends"></i><span>Participants (${participants+1})</span>`;
+
+    isParticipantListVisible = true;
+  } else {
+    // Revert to the original state
+    const participantButton = document.getElementById('participants');
+    participantButton.innerHTML = `<i class="fas fa-user-friends"></i><span>Participants</span>`;
+
+    isParticipantListVisible = false;
+  }
+}
+
+function enterFullScreen(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen(); // Firefox
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen(); // Safari
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen(); // IE/Edge
+  }
+}
+
+// Add event listener to the full_screen button
+let btn = document.getElementById("full_screen");
+btn.addEventListener("click", function() {
+  let videoEle = document.querySelector('video');
+  enterFullScreen(videoEle);
+});
+
+// Listen for the fullscreenchange event
+document.addEventListener('fullscreenchange', (event) => {
+  if (document.fullscreenElement) {
+    console.log('Entered fullscreen:', document.fullscreenElement);
+  } else {
+    console.log('Exited fullscreen.');
+  }
+});
