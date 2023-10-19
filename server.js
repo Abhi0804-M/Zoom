@@ -38,5 +38,9 @@ io.on('connection', socket => {
     })
   })
 })
+const setupSocket = require('./chat.js');
+
+// Set up the chat application
+setupSocket(server);
 
 server.listen(process.env.PORT||3030)
